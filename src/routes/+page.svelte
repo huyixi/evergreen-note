@@ -28,6 +28,7 @@
 </script>
 
 <div>
+	<h1>Notes</h1>
 	{#each notes as note}
 		<div>
 			{@html note.html}
