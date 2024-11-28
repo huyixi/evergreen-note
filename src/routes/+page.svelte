@@ -11,14 +11,14 @@
 	async function fetchNote(slug: string): Promise<Note> {
 		const res = await fetch(`/api/notes?slug=${slug}`);
 		const data = await res.json();
-		const note = data.data.html;
-		return { slug, html: note };
+		return data.data.html;
 	}
 
 	onMount(async () => {
-		const initialNote = await fetchNote('note1');
+		const indexNote = await fetchNote('index');
 		const note2 = await fetchNote('note2');
-		notes = [initialNote, note2];
+		const note3 = await fetchNote('note3');
+		notes = [indexNote, note2, note3];
 	});
 </script>
 
